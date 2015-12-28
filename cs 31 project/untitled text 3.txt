@@ -1,0 +1,71 @@
+class Complex
+{
+	public:
+		Complex(double re, double im);
+		Complex();
+		double real() const;
+	private:
+		double m_rho;
+		double m_theta;
+}
+
+Complex::Complex(double re, double im)
+{
+	m_rho = sqrt(re*re + im*im);
+	m_imag = atan(im, re);
+}
+
+Complex::Complex()
+{
+	m_rho = 0;
+	m_theta = 0;
+}
+
+double Complex:: real() const
+{
+	return m_rho * cos(m_theta);
+}
+
+
+
+int main()
+{
+	Complex c1(4,3); // represents 4-3!
+	Complex c2;     // represents 0+0i
+	cout << c1.real(); // writes 4
+	
+	Complex ca[100];
+}
+
+
+#include <cmath>
+using namespace std;
+
+double diag(double side)
+{
+	return side * sqrt(2); // won't compile in C++98: ambiguos
+}
+
+double sqrt(int x); // C++11, this is the exact match 
+double sqrt(double x);
+float sqrt(float x);
+long double sqrt(long double x);
+
+
+
+in c function cannot have the same name for different function  
+
+void rdraw
+You can overload a function name if the functions differ in the number or types of parameters.
+
+void draw(Rectangle r);
+void draw(Circle c);
+
+void draw(Rectangle r)
+{
+...
+}
+
+void draw(Circle c)
+{
+}

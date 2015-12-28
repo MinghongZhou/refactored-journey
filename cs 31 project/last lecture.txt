@@ -1,0 +1,79 @@
+class string
+{
+	public:
+		string (const char* text);
+		string();
+		int size() const;
+		...
+};
+
+string s;// calls the zero-argument constructor
+		// the " default constructor"
+string t("Hello") // calls the constructor that takes a const char*
+string t = "Hello"; // means the same 
+cout<< t.size(); // writes 5
+string sa[100];// calls the default c's for 100 times 
+
+struct Employee
+{
+	string name;
+	double salary;
+	int age;
+};
+
+Employee e;
+If you declare no constructors at all for a class, the compiler writes a default constructor for you:
+	Data members of built-in types are left uninitialized
+	Data members of a class type are default-constructed
+	
+class Robot
+{
+	public:
+		Robot(...,...,..);
+		...
+}
+
+Robot r1(...,...,...);
+Robot r; // there won't be a default constructor, can not create a robot 
+Robot ra[100]; // the element in the array get default-constructed, but there is no default constructor for robot. Therefore, this will not compile
+
+
+
+
+
+
+
+
+
+class Rock
+{
+	public:
+		int weight() const;
+		...
+};
+
+class Fan 
+{
+	public:
+		void turnOn();
+		...
+};
+
+Class Robot
+{
+	public;
+		Robot();
+		Void move();
+		...
+	private:
+		Fan m_cooler;
+		Rock* m_rock;
+};
+
+void Robot::move()
+{	...
+		if ( m_rock != nullptr && m_rock->weight() > 50)
+		m_cooler.turnOn();
+	...
+}
+

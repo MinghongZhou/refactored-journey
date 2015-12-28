@@ -1,0 +1,11 @@
+lecture 1 
+b = a[:] make a copy of a
+for var in list: print var
+value in list //find out wether the value is in the list
+a.append(4)    // it does not return anything , 4 stand for value
+a.pop(0) // 0 stands for position 
+a = [4, 2, 1, 6]
+sorted(a)
+[1, 2, 4, 6]
+def last(s): return s[-1] // define a function
+sorted(a, key=Last)

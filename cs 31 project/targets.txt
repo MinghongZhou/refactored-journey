@@ -1,0 +1,58 @@
+class Target 
+{
+	public:
+		Target();
+		bool move(char dir);
+		int position() const;
+		void replayHistory() const;
+		
+};
+
+pointers:
+Another way to implement passing by reference
+Another wat to traverse array
+Manipulate dynamic storage
+Represent relationships in data structures
+
+void f()
+{
+	Target* targets[100];
+	int nTargets = 0;
+	...
+	targets[nTargets] = new Target;
+	nTargets++;
+	...
+	targets[k]->move('R'); // suppose k is 1	 
+	...
+	delete targets[k]; // suppose k is 1, "dangling pointer"
+	targets [k]	= targets[k+1];
+	nTargets--;
+	...
+	for(int k = 0; k < nTargets; k++)
+		delete targets[k];
+}
+
+named local variables and parameters
+("automatic variables") live on "the stack"
+
+void g(int k, string s, Target t)
+{
+	Target ta[100];
+	int n;
+	...
+}
+
+variables declared outside of any function live in in the "global storage area" (the static storage area)
+destructor is called when the object is about to go away, therefore there is no need to set the pointer to nullptr
+
+void h()
+{
+	pet* pp;
+	...
+	pp = new pet("Rex", 20);
+	...
+	cout << pp-> health();
+	pp->addToy();
+	...
+	delete pp; // delete is going to delete pet, before that the destructor is about to be called. The object pointed to by the favorite toy is destroyed
+}
